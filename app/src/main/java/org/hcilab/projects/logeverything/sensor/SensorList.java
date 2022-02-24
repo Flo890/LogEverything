@@ -8,6 +8,7 @@ import org.hcilab.projects.logeverything.sensor.implementation.AccessibilitySens
 import org.hcilab.projects.logeverything.sensor.implementation.ActivitySensor;
 import org.hcilab.projects.logeverything.sensor.implementation.AppSensor;
 import org.hcilab.projects.logeverything.sensor.implementation.ChargingSensor;
+import org.hcilab.projects.logeverything.sensor.implementation.GlobalTouchSensor;
 import org.hcilab.projects.logeverything.sensor.implementation.MyAccelerometerSensor;
 import org.hcilab.projects.logeverything.sensor.implementation.MyGyroscopeSensor;
 import org.hcilab.projects.logeverything.sensor.implementation.MyLightSensor;
@@ -46,7 +47,8 @@ public class SensorList {
 		list.add(new ScreenOrientationSensor());
 		list.add(new StillAliveSensor());
 		list.add(new TouchSensor());
-		list.add(new WifiSensor());		
+		list.add(new WifiSensor());
+		list.add(new GlobalTouchSensor());
 		
 		SensorDatabaseHelper db = new SensorDatabaseHelper(pContext);
 		

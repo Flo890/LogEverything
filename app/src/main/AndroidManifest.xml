@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -43,7 +44,8 @@
             android:enabled="true"
             android:process=":remote"
             android:stopWithTask="false"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            >
             <intent-filter>
         			<action android:name="android.accessibilityservice.AccessibilityService" />
       		</intent-filter>
@@ -72,7 +74,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver>        
+        </receiver>
+
+        <service
+            android:name=".service.GlobalTouchService"
+            android:exported="false"
+            android:label="Global Touch Service" >
+        </service>
         
     </application>
 
